@@ -156,6 +156,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 .agent .grid p { color: var(--muted); font-size: 15px; margin-top: 4px; }
 .agent .grid li:nth-last-child(-n+3) { border-bottom: 0; }
 @media (max-width: 900px) { .agent .grid { grid-template-columns: minmax(0, 1fr); } .agent .grid li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .agent .grid li:last-child { border-bottom: 0; } }
+.hero .wrap.solo { grid-template-columns: minmax(0, 1fr); }
+.hero .wrap.solo > div { max-width: 46em; }
+.example-wrap { max-width: 560px; }
 /* card system: everything is a load ticket */
 .card { background: var(--ticket); border: 1px solid var(--line); border-radius: 10px; position: relative; box-shadow: 0 0 0 1px rgba(31,181,181,.15), 0 24px 60px -24px rgba(31,181,181,.35); }
 .card .stub { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); top: 54px; }
@@ -257,7 +260,7 @@ section.band { background: rgba(12,26,62,.55); }
     </div>
   </div>
   <div class="hero">
-    <div class="wrap">
+    <div class="wrap solo">
       <div>
         <p class="eyebrow">For people who buy and resell pallets</p>
         <h1 style="margin-top:16px">Run the whole load <em>from your phone's camera.</em></h1>
@@ -267,22 +270,6 @@ section.band { background: rgba(12,26,62,.55); }
           <span class="note">We're taking our first customers now</span>
         </div>
       </div>
-
-      <figure class="ticket" aria-label="Example load ticket">
-        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
-        <div class="head">
-          <span class="po">Purchase order 1043 · Load 212</span>
-          <span class="tag">Example load</span>
-        </div>
-        <ol>
-          <li><span class="dot"></span><span class="step">Deal Desk<span>Photo of the item list → what to pay</span></span><span class="val">bid $1,820</span></li>
-          <li><span class="dot"></span><span class="step">Load Breaker<span>Split into 14 lots, cost of each</span></span><span class="val">$130/lot</span></li>
-          <li><span class="dot"></span><span class="step">Shopify<span>Photo → live listing with a price</span></span><span class="val">14 live</span></li>
-          <li><span class="dot"></span><span class="step">Flex Bins<span>Snap a photo of where it sits</span></span><span class="val">PHOTO-0012</span></li>
-          <li><span class="dot"></span><span class="step">Customer Intelligence Agent<span>Sold 9 lots to buyers</span></span><span class="val">9 sold · $3,105</span></li>
-        </ol>
-        <figcaption class="foot"><span>Profit on this purchase order so far</span><b>+$1,285</b></figcaption>
-      </figure>
     </div>
   </div>
 
@@ -393,6 +380,30 @@ section.band { background: rgba(12,26,62,.55); }
         <div class="chead"><span class="po">Customer Intelligence Agent</span><span class="tag">Your AI salesperson</span></div>
         <ul class="grid"><li><span class="dot"></span><div><h3>Knows your buyers</h3><p>It remembers every buyer: what they looked at, asked about, bought and paid.</p></div></li><li><span class="dot"></span><div><h3>Knows everything you have</h3><p>Every item, where it is and what it cost, so it only offers what's really for sale, at your prices.</p></div></li><li><span class="dot"></span><div><h3>Negotiates and closes</h3><p>It answers by text, email, chat and social media, haggles within your limits, and closes the sale.</p></div></li><li><span class="dot"></span><div><h3>Watches what's hot</h3><p>It sees what's selling and what isn't, and offers the right lots to the right buyers.</p></div></li><li><span class="dot"></span><div><h3>Feeds the Deal Desk</h3><p>Everything it learns helps price your next purchase.</p></div></li><li><span class="dot"></span><div><h3>Yours to name</h3><p>She works under your store's name. Call her whatever you like.</p></div></li></ul>
       </div>
+    </div>
+  </section>
+  <section id="example">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Example</p>
+        <h2>One load, start to finish</h2>
+        <p>Here's what one truckload pallet looks like in LotMind, from the offer to the profit. The numbers are an example.</p>
+      </div>
+      <div class="example-wrap"><figure class="ticket" aria-label="Example load ticket">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="head">
+          <span class="po">Purchase order 1043 · Load 212</span>
+          <span class="tag">Example load</span>
+        </div>
+        <ol>
+          <li><span class="dot"></span><span class="step">Deal Desk<span>Photo of the item list → what to pay</span></span><span class="val">bid $1,820</span></li>
+          <li><span class="dot"></span><span class="step">Load Breaker<span>Split into 14 lots, cost of each</span></span><span class="val">$130/lot</span></li>
+          <li><span class="dot"></span><span class="step">Shopify<span>Photo → live listing with a price</span></span><span class="val">14 live</span></li>
+          <li><span class="dot"></span><span class="step">Flex Bins<span>Snap a photo of where it sits</span></span><span class="val">PHOTO-0012</span></li>
+          <li><span class="dot"></span><span class="step">Customer Intelligence Agent<span>Sold 9 lots to buyers</span></span><span class="val">9 sold · $3,105</span></li>
+        </ol>
+        <figcaption class="foot"><span>Profit on this purchase order so far</span><b>+$1,285</b></figcaption>
+      </figure></div>
     </div>
   </section>
   <section class="agent" id="nwot">
