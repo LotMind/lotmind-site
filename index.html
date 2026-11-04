@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LotMind</title>
+<meta name="description" content="LotMind runs a liquidation resale business from a phone camera: value it, buy it, break it, list it, locate it, sell it, with every unit tied to its PO.">
+<meta property="og:title" content="LotMind">
+<meta property="og:description" content="LotMind runs a liquidation resale business from a phone camera: value it, buy it, break it, list it, locate it, sell it, with every unit tied to its PO.">
+<meta property="og:url" content="https://lotmind.ai/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14285A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html,body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Single dark brand look on purpose, taken from the LotMind hero lockup: charcoal and navy, teal light, the mark backlit. Layout: a warehouse load ticket carries the story. Hero = the claim + one example ticket; then the loop as a route, then who it's for, then contact. */
+:root {
+  color-scheme: dark;
+  --navy: #14285A;
+  --navy-deep: #0C1A3E;
+  --teal: #1FB5B5;
+  --teal-hi: #5AD3D3;
+  --bg: #1C1D21;            /* charcoal ground, from the hero lockup */
+  --surface: #0C1A3E;       /* navy bands */
+  --ink: #FFFFFF;
+  --muted: #9AA7B8;
+  --line: #2E4F8F;
+  --brand-a: #FFFFFF;       /* "Lot" in the wordmark on dark */
+  --teal-ink: #1FB5B5;
+  --ticket: #14285A;
+  --navy-2: #1C3570;
+  --on-navy: #E6EBF5;
+  --on-navy-muted: #A9B6D3;
+  --display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+a { color: var(--teal-ink); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-ink); }
+
+header.top { padding-block: 22px; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; font: 600 27px/1 var(--display); letter-spacing: -0.02em; text-decoration: none; }
+.wordmark .mark { width: 60px; height: auto; flex: none; filter: drop-shadow(0 0 4px rgba(90,211,211,.9)) drop-shadow(0 0 14px rgba(31,181,181,.7)); }
+.wordmark .glow { position: relative; display: inline-grid; place-items: center; padding: 8px; border-radius: 50%; background: radial-gradient(circle, rgba(198,245,245,.55) 0%, rgba(31,181,181,.35) 45%, rgba(31,181,181,0) 72%); }
+.bigmark { position: relative; display: grid; place-items: center; width: 220px; aspect-ratio: 1; max-width: 100%; }
+.bigmark::before { content: ""; position: absolute; inset: -40%; border-radius: 50%; background: radial-gradient(circle, rgba(198,245,245,.8) 0%, rgba(31,181,181,.6) 28%, rgba(20,40,90,.35) 52%, rgba(30,32,38,0) 72%); }
+.bigmark svg { position: relative; width: 100%; height: auto; filter: drop-shadow(0 0 6px rgba(90,211,211,.9)) drop-shadow(0 0 28px rgba(31,181,181,.6)); }
+.wordmark .a { color: var(--brand-a); } .wordmark .b { color: var(--teal); }
+.top nav { display: flex; gap: 22px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+
+.hero { padding-block: 40px 72px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.06; font-weight: 700; color: var(--ink); }
+.hero h1 em { font-style: normal; color: var(--teal); text-shadow: 0 0 28px rgba(31,181,181,.45); }
+.hero .lede { margin-top: 22px; font-size: 19px; color: var(--muted); max-width: 34em; }
+.cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 600 16px/1 var(--body); padding: 15px 22px; border-radius: 6px; border: 0; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--teal); color: var(--navy-deep); box-shadow: 0 0 24px -4px rgba(31,181,181,.6); }
+.btn.primary:hover { background: var(--teal-hi); }
+.cta .note { font-size: 14px; color: var(--muted); }
+
+/* the load ticket */
+.ticket { background: var(--ticket); border: 1px solid var(--line); border-radius: 10px; font-family: var(--mono); font-size: 13.5px; position: relative; box-shadow: 0 0 0 1px rgba(31,181,181,.15), 0 24px 60px -24px rgba(31,181,181,.35); }
+.ticket .head { display: flex; justify-content: space-between; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px dashed var(--line); flex-wrap: wrap; }
+.ticket .po { font-weight: 500; font-size: 15px; color: var(--ink); }
+.ticket .tag { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.ticket ol { list-style: none; margin: 0; padding: 8px 20px 6px; }
+.ticket li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.ticket li:last-child { border-bottom: 0; }
+.ticket .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); align-self: center; }
+.ticket .step { color: var(--ink); font-family: var(--body); font-weight: 600; font-size: 14.5px; }
+.ticket .step span { display: block; font-family: var(--mono); font-weight: 400; font-size: 12.5px; color: var(--muted); }
+.ticket .val { color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ticket .foot { display: flex; justify-content: space-between; gap: 12px; padding: 14px 20px 18px; border-top: 1px dashed var(--line); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.ticket .foot b { color: var(--teal-ink); font-weight: 500; font-size: 16px; }
+.ticket .stub { position: absolute; top: 58px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); }
+.ticket .stub.l { left: -9px; } .ticket .stub.r { right: -9px; }
+
+section { padding-block: 72px; }
+section.band { background: var(--surface); border-block: 1px solid var(--line); }
+section.band .card .stub { background: var(--surface); }
+section.alt { background: var(--surface); border-block: 1px solid var(--line); }
+section.navy { background: var(--navy); color: var(--on-navy); }
+section.navy .eyebrow { color: var(--teal); }
+section.navy .sec-head p, section.navy .route p { color: var(--on-navy-muted); }
+section.navy .route li { border-top-color: var(--teal); }
+section.navy .route li::before { color: var(--on-navy-muted); }
+section.navy .route li.back { border-top-color: #FFFFFF; }
+section.navy .route li.back::before { color: var(--teal); }
+.sec-head { display: grid; gap: 12px; max-width: 40em; margin-bottom: 40px; }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; font-weight: 700; }
+.sec-head p { color: var(--muted); font-size: 18px; }
+
+/* the loop as a route */
+.route { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; counter-reset: stop; }
+.route li { counter-increment: stop; display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 3px solid var(--navy); }
+.route li::before { content: "Step " counter(stop); font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.route h3 { font-size: 20px; font-weight: 600; }
+.route p { color: var(--muted); font-size: 15.5px; }
+.route li.back { border-top-color: var(--teal); background: transparent; }
+.route li.back::before { content: "Then"; color: var(--teal-ink); }
+
+.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.points div { display: grid; gap: 10px; align-content: start; }
+.points h3 { font-size: 20px; font-weight: 700; }
+.points p { color: var(--muted); font-size: 16px; }
+.points .k { font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--teal-ink); }
+
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.contact h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; }
+.contact p { color: var(--muted); margin-top: 14px; font-size: 18px; max-width: 32em; }
+.mailcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; gap: 14px; }
+.mailaddr { font: 500 22px/1.2 var(--mono); color: var(--ink); user-select: all; overflow-wrap: anywhere; }
+.contact-card .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--teal); padding: 12px 16px; font-size: 15px; }
+.copied { font-size: 14px; color: var(--teal-ink); }
+
+footer { padding-block: 36px 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+
+
+/* lockup band, straight from the brand card */
+.lockup { padding-block: 24px 64px; }
+.lockup .wrap { display: flex; align-items: center; justify-content: center; gap: clamp(28px, 5vw, 72px); flex-wrap: wrap; }
+.lockup .bigmark { width: clamp(180px, 26vw, 340px); }
+.lockup .words { display: grid; gap: 16px; min-width: 0; }
+.lockup .big { font: 600 clamp(64px, 11vw, 136px)/0.95 var(--display); letter-spacing: -0.035em; }
+.lockup .big .a { color: #FFFFFF; } .lockup .big .b { color: var(--teal); text-shadow: 0 0 40px rgba(31,181,181,.55); }
+.lockup .tag { font: 500 clamp(20px, 2.4vw, 30px)/1.25 var(--display); color: #FFFFFF; letter-spacing: -0.01em; }
+.lockup .tag em { font-style: normal; color: var(--teal); }
+.lockup .cap { font: 500 14px/1.4 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; font: 600 14px/1 var(--body); color: #FFFFFF; background: rgba(12,26,62,.5); }
+.pill svg { width: 14px; height: 14px; flex: none; }
+
+.agent .grid { list-style: none; margin: 0; padding: 6px 22px 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.agent .grid li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); align-content: start; }
+.agent .grid .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); margin-top: 7px; }
+.agent .grid h3 { font: 600 17px/1.3 var(--display); }
+.agent .grid p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.agent .grid li:nth-last-child(-n+3) { border-bottom: 0; }
+@media (max-width: 900px) { .agent .grid { grid-template-columns: minmax(0, 1fr); } .agent .grid li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .agent .grid li:last-child { border-bottom: 0; } }
+/* card system: everything is a load ticket */
+.card { background: var(--ticket); border: 1px solid var(--line); border-radius: 10px; position: relative; box-shadow: 0 0 0 1px rgba(31,181,181,.15), 0 24px 60px -24px rgba(31,181,181,.35); }
+.card .stub { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); top: 54px; }
+.card .stub.l { left: -9px; } .card .stub.r { right: -9px; }
+.card .chead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 18px 22px 14px; border-bottom: 1px dashed var(--line); font-family: var(--mono); }
+.card .chead .po { font-weight: 500; font-size: 15px; }
+.card .chead .tag { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.card .cfoot { padding: 14px 22px 18px; border-top: 1px dashed var(--line); font-family: var(--mono); font-size: 13.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.card .cfoot b { color: var(--teal-ink); font-weight: 500; }
+.loop { list-style: none; margin: 0; padding: 4px 22px; }
+.loop li { display: grid; grid-template-columns: 14px 150px minmax(0, 1fr) auto; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.loop li:last-child { border-bottom: 0; }
+.loop .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); align-self: center; }
+.loop .name { font: 600 17px/1.3 var(--display); color: var(--ink); }
+.loop .what { color: var(--muted); font-size: 15.5px; }
+.loop .verb { font: 500 13px/1 var(--mono); color: var(--teal-hi); border: 1px solid var(--teal); background: rgba(31,181,181,.12); padding: 6px 9px; border-radius: 4px; white-space: nowrap; }
+.loop li.back .dot { background: #FFFFFF; }
+.loop li.back .verb { color: #FFFFFF; border-color: #FFFFFF; background: transparent; }
+.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.who .card .body { padding: 18px 22px 22px; display: grid; gap: 10px; }
+.who h3 { font-size: 19px; font-weight: 600; }
+.who p { color: var(--muted); font-size: 15.5px; }
+.contact-card .body { padding: 20px 22px 22px; display: grid; gap: 16px; }
+@media (max-width: 900px) { .who { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) {
+  .loop li { grid-template-columns: 14px minmax(0, 1fr) auto; }
+  .loop .what { grid-column: 2 / -1; }
+}
+@media (max-width: 900px) {
+  .hero .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .route { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .points { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+@media (max-width: 520px) {
+  .route { grid-template-columns: minmax(0, 1fr); }
+  .top nav { display: none; }
+  section { padding-block: 56px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ticket li { animation: in .5s ease both; }
+  .ticket li:nth-child(2) { animation-delay: .08s; } .ticket li:nth-child(3) { animation-delay: .16s; }
+  .ticket li:nth-child(4) { animation-delay: .24s; } .ticket li:nth-child(5) { animation-delay: .32s; }
+  @keyframes in { from { transform: translateY(4px); } to { transform: none; } }
+}
+
+/* Version D: the brand card itself is the hero, on an isometric crate-grid floor */
+:root { --bg: #15171B; --surface: #1B1E24; --ticket: #14285A; }
+body { background-color: var(--bg); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='24'%3E%3Cpath d='M0 12 L20 0 L40 12 L20 24 Z' fill='none' stroke='%231FB5B5' stroke-opacity='0.07'/%3E%3C/svg%3E"); }
+section.band { background: rgba(12,26,62,.55); }
+.lockup { padding-block: 8px 64px; }
+.lockup .wrap { display: block; }
+.brandcard { background: #222222; border: 1px solid #2E4F8F; border-radius: 18px; padding: clamp(22px, 4vw, 48px) clamp(20px, 5vw, 64px); display: grid; gap: clamp(28px, 4vw, 48px); box-shadow: 0 0 0 1px rgba(31,181,181,.12), 0 40px 90px -30px rgba(31,181,181,.45); }
+.brandcard .row { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; font: 600 12px/1.3 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.brandcard .row.bottom { text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 13px; justify-content: flex-start; }
+.brandcard .row.bottom .push { margin-left: auto; }
+.brandcard .mid { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 72px); flex-wrap: wrap; }
+.brandcard .vr { width: 1px; height: 32px; background: var(--muted); opacity: .4; }
+.brandcard .mini { display: inline-flex; align-items: center; gap: 12px; font: 600 26px/1 var(--display); letter-spacing: -0.02em; }
+.brandcard .mini svg { width: 44px; height: auto; }
+.brandcard .icon { width: 52px; height: 52px; border-radius: 13px; background: #F4F6F8; display: grid; place-items: center; box-shadow: 0 0 22px -4px rgba(31,181,181,.6); }
+.brandcard .icon svg { width: 38px; height: auto; }
+@media (max-width: 520px) { .brandcard .row.bottom .vr, .brandcard .row.bottom .push { display: none; } }
+
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="LotMind home"><span class="glow"><svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 872" role="img" aria-label="LotMind mark: a brain of navy and teal cubes on a pallet"><polygon points="240,62 270,34 470,34 440,62" fill="#2E4F8F"/><polygon points="440,62 470,34 470,162 440,190" fill="#0C1A3E"/><rect x="240" y="62" width="200" height="128" fill="#14285A"/><polygon points="480,42 510,14 710,14 680,42" fill="#5AD3D3"/><polygon points="680,42 710,14 710,144 680,172" fill="#138C8C"/><rect x="480" y="42" width="200" height="130" fill="#1FB5B5"/><polygon points="110,186 140,158 330,158 300,186" fill="#2E4F8F"/><polygon points="300,186 330,158 330,284 300,312" fill="#0C1A3E"/><rect x="110" y="186" width="190" height="126" fill="#14285A"/><polygon points="350,196 380,168 590,168 560,196" fill="#2E4F8F"/><polygon points="560,196 590,168 590,304 560,332" fill="#0C1A3E"/><rect x="350" y="196" width="210" height="136" fill="#14285A"/><polygon points="620,188 650,160 845,160 815,188" fill="#5AD3D3"/><polygon points="815,188 845,160 845,294 815,322" fill="#138C8C"/><rect x="620" y="188" width="195" height="134" fill="#1FB5B5"/><polygon points="30,322 60,294 245,294 215,322" fill="#2E4F8F"/><polygon points="215,322 245,294 245,434 215,462" fill="#0C1A3E"/><rect x="30" y="322" width="185" height="140" fill="#14285A"/><polygon points="735,332 765,304 935,304 905,332" fill="#5AD3D3"/><polygon points="905,332 935,304 935,438 905,466" fill="#138C8C"/><rect x="735" y="332" width="170" height="134" fill="#1FB5B5"/><polygon points="255,342 285,314 475,314 445,342" fill="#2E4F8F"/><polygon points="445,342 475,314 475,439 445,467" fill="#0C1A3E"/><rect x="255" y="342" width="190" height="125" fill="#14285A"/><polygon points="480,346 510,318 705,318 675,346" fill="#5AD3D3"/><polygon points="675,346 705,318 705,444 675,472" fill="#138C8C"/><rect x="480" y="346" width="195" height="126" fill="#1FB5B5"/><polygon points="160,482 190,454 410,454 380,482" fill="#2E4F8F"/><polygon points="380,482 410,454 410,558 380,586" fill="#0C1A3E"/><rect x="160" y="482" width="220" height="104" fill="#14285A"/><polygon points="410,482 440,454 645,454 615,482" fill="#5AD3D3"/><polygon points="615,482 645,454 645,568 615,596" fill="#138C8C"/><rect x="410" y="482" width="205" height="114" fill="#1FB5B5"/><polygon points="670,496 700,468 860,468 830,496" fill="#5AD3D3"/><polygon points="830,496 860,468 860,574 830,602" fill="#138C8C"/><rect x="670" y="496" width="160" height="106" fill="#1FB5B5"/><polygon points="490,600 640,600 612,716 580,716" fill="#0C1A3E"/><polygon points="615,612 645,584 755,584 725,612" fill="#5AD3D3"/><polygon points="725,612 755,584 755,688 725,716" fill="#138C8C"/><rect x="615" y="612" width="110" height="104" fill="#1FB5B5"/><rect x="183" y="722" width="586" height="32" rx="2" fill="#14285A"/><rect x="200" y="754" width="86" height="52" fill="#14285A"/><rect x="432" y="754" width="86" height="52" fill="#14285A"/><rect x="664" y="754" width="86" height="52" fill="#14285A"/><rect x="183" y="806" width="586" height="36" rx="2" fill="#14285A"/></svg></span><span><span class="a">Lot</span><span class="b">Mind</span></span></a>
+    <nav aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#who">Who it's for</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="lockup">
+    <div class="wrap">
+      <div class="brandcard">
+        <div class="row"><span>LotMind · the liquidation loop</span><span>Made for pallet resellers</span></div>
+        <div class="mid">
+      <div class="bigmark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 872" aria-hidden="true" aria-label="LotMind mark: a brain of navy and teal cubes on a pallet"><polygon points="240,62 270,34 470,34 440,62" fill="#2E4F8F"/><polygon points="440,62 470,34 470,162 440,190" fill="#0C1A3E"/><rect x="240" y="62" width="200" height="128" fill="#14285A"/><polygon points="480,42 510,14 710,14 680,42" fill="#5AD3D3"/><polygon points="680,42 710,14 710,144 680,172" fill="#138C8C"/><rect x="480" y="42" width="200" height="130" fill="#1FB5B5"/><polygon points="110,186 140,158 330,158 300,186" fill="#2E4F8F"/><polygon points="300,186 330,158 330,284 300,312" fill="#0C1A3E"/><rect x="110" y="186" width="190" height="126" fill="#14285A"/><polygon points="350,196 380,168 590,168 560,196" fill="#2E4F8F"/><polygon points="560,196 590,168 590,304 560,332" fill="#0C1A3E"/><rect x="350" y="196" width="210" height="136" fill="#14285A"/><polygon points="620,188 650,160 845,160 815,188" fill="#5AD3D3"/><polygon points="815,188 845,160 845,294 815,322" fill="#138C8C"/><rect x="620" y="188" width="195" height="134" fill="#1FB5B5"/><polygon points="30,322 60,294 245,294 215,322" fill="#2E4F8F"/><polygon points="215,322 245,294 245,434 215,462" fill="#0C1A3E"/><rect x="30" y="322" width="185" height="140" fill="#14285A"/><polygon points="735,332 765,304 935,304 905,332" fill="#5AD3D3"/><polygon points="905,332 935,304 935,438 905,466" fill="#138C8C"/><rect x="735" y="332" width="170" height="134" fill="#1FB5B5"/><polygon points="255,342 285,314 475,314 445,342" fill="#2E4F8F"/><polygon points="445,342 475,314 475,439 445,467" fill="#0C1A3E"/><rect x="255" y="342" width="190" height="125" fill="#14285A"/><polygon points="480,346 510,318 705,318 675,346" fill="#5AD3D3"/><polygon points="675,346 705,318 705,444 675,472" fill="#138C8C"/><rect x="480" y="346" width="195" height="126" fill="#1FB5B5"/><polygon points="160,482 190,454 410,454 380,482" fill="#2E4F8F"/><polygon points="380,482 410,454 410,558 380,586" fill="#0C1A3E"/><rect x="160" y="482" width="220" height="104" fill="#14285A"/><polygon points="410,482 440,454 645,454 615,482" fill="#5AD3D3"/><polygon points="615,482 645,454 645,568 615,596" fill="#138C8C"/><rect x="410" y="482" width="205" height="114" fill="#1FB5B5"/><polygon points="670,496 700,468 860,468 830,496" fill="#5AD3D3"/><polygon points="830,496 860,468 860,574 830,602" fill="#138C8C"/><rect x="670" y="496" width="160" height="106" fill="#1FB5B5"/><polygon points="490,600 640,600 612,716 580,716" fill="#0C1A3E"/><polygon points="615,612 645,584 755,584 725,612" fill="#5AD3D3"/><polygon points="725,612 755,584 755,688 725,716" fill="#138C8C"/><rect x="615" y="612" width="110" height="104" fill="#1FB5B5"/><rect x="183" y="722" width="586" height="32" rx="2" fill="#14285A"/><rect x="200" y="754" width="86" height="52" fill="#14285A"/><rect x="432" y="754" width="86" height="52" fill="#14285A"/><rect x="664" y="754" width="86" height="52" fill="#14285A"/><rect x="183" y="806" width="586" height="36" rx="2" fill="#14285A"/></svg></div>
+      <div class="words">
+        <h2 class="big"><span class="a">Lot</span><span class="b">Mind</span></h2>
+        <p class="tag">Value it. Buy it. Break it. List it. Locate it. <em>Sell it.</em></p>
+        <p class="cap">From pallet to posted, with every unit tied to its PO</p>
+        <div class="pills"><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Value</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5zM3 8l9 5 9-5M12 13v8"/></svg>Break</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg>Instant capture listing</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01"/></svg>Flex bins</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 18h2v2h-2zM14 18h2M18 14h2"/></svg>Scan-to-see QR</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H9M20 12H9M20 17H9M4 7h.01M4 12h.01M4 17h.01"/></svg>List</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9M4 9h16v11H4zM4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0M10 20v-5h4v5"/></svg>Shopify store build</span><span class="pill"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#1FB5B5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>Autonomous sales agent</span></div>
+      </div>
+        </div>
+        <div class="row bottom">
+          <span class="mini"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 872" aria-hidden="true" aria-label="LotMind mark: a brain of navy and teal cubes on a pallet"><polygon points="240,62 270,34 470,34 440,62" fill="#2E4F8F"/><polygon points="440,62 470,34 470,162 440,190" fill="#0C1A3E"/><rect x="240" y="62" width="200" height="128" fill="#14285A"/><polygon points="480,42 510,14 710,14 680,42" fill="#5AD3D3"/><polygon points="680,42 710,14 710,144 680,172" fill="#138C8C"/><rect x="480" y="42" width="200" height="130" fill="#1FB5B5"/><polygon points="110,186 140,158 330,158 300,186" fill="#2E4F8F"/><polygon points="300,186 330,158 330,284 300,312" fill="#0C1A3E"/><rect x="110" y="186" width="190" height="126" fill="#14285A"/><polygon points="350,196 380,168 590,168 560,196" fill="#2E4F8F"/><polygon points="560,196 590,168 590,304 560,332" fill="#0C1A3E"/><rect x="350" y="196" width="210" height="136" fill="#14285A"/><polygon points="620,188 650,160 845,160 815,188" fill="#5AD3D3"/><polygon points="815,188 845,160 845,294 815,322" fill="#138C8C"/><rect x="620" y="188" width="195" height="134" fill="#1FB5B5"/><polygon points="30,322 60,294 245,294 215,322" fill="#2E4F8F"/><polygon points="215,322 245,294 245,434 215,462" fill="#0C1A3E"/><rect x="30" y="322" width="185" height="140" fill="#14285A"/><polygon points="735,332 765,304 935,304 905,332" fill="#5AD3D3"/><polygon points="905,332 935,304 935,438 905,466" fill="#138C8C"/><rect x="735" y="332" width="170" height="134" fill="#1FB5B5"/><polygon points="255,342 285,314 475,314 445,342" fill="#2E4F8F"/><polygon points="445,342 475,314 475,439 445,467" fill="#0C1A3E"/><rect x="255" y="342" width="190" height="125" fill="#14285A"/><polygon points="480,346 510,318 705,318 675,346" fill="#5AD3D3"/><polygon points="675,346 705,318 705,444 675,472" fill="#138C8C"/><rect x="480" y="346" width="195" height="126" fill="#1FB5B5"/><polygon points="160,482 190,454 410,454 380,482" fill="#2E4F8F"/><polygon points="380,482 410,454 410,558 380,586" fill="#0C1A3E"/><rect x="160" y="482" width="220" height="104" fill="#14285A"/><polygon points="410,482 440,454 645,454 615,482" fill="#5AD3D3"/><polygon points="615,482 645,454 645,568 615,596" fill="#138C8C"/><rect x="410" y="482" width="205" height="114" fill="#1FB5B5"/><polygon points="670,496 700,468 860,468 830,496" fill="#5AD3D3"/><polygon points="830,496 860,468 860,574 830,602" fill="#138C8C"/><rect x="670" y="496" width="160" height="106" fill="#1FB5B5"/><polygon points="490,600 640,600 612,716 580,716" fill="#0C1A3E"/><polygon points="615,612 645,584 755,584 725,612" fill="#5AD3D3"/><polygon points="725,612 755,584 755,688 725,716" fill="#138C8C"/><rect x="615" y="612" width="110" height="104" fill="#1FB5B5"/><rect x="183" y="722" width="586" height="32" rx="2" fill="#14285A"/><rect x="200" y="754" width="86" height="52" fill="#14285A"/><rect x="432" y="754" width="86" height="52" fill="#14285A"/><rect x="664" y="754" width="86" height="52" fill="#14285A"/><rect x="183" y="806" width="586" height="36" rx="2" fill="#14285A"/></svg><span><span style="color:#fff">Lot</span><span style="color:var(--teal)">Mind</span></span></span>
+          <span class="vr" aria-hidden="true"></span>
+          <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 872" aria-hidden="true" aria-label="LotMind mark: a brain of navy and teal cubes on a pallet"><polygon points="240,62 270,34 470,34 440,62" fill="#2E4F8F"/><polygon points="440,62 470,34 470,162 440,190" fill="#0C1A3E"/><rect x="240" y="62" width="200" height="128" fill="#14285A"/><polygon points="480,42 510,14 710,14 680,42" fill="#5AD3D3"/><polygon points="680,42 710,14 710,144 680,172" fill="#138C8C"/><rect x="480" y="42" width="200" height="130" fill="#1FB5B5"/><polygon points="110,186 140,158 330,158 300,186" fill="#2E4F8F"/><polygon points="300,186 330,158 330,284 300,312" fill="#0C1A3E"/><rect x="110" y="186" width="190" height="126" fill="#14285A"/><polygon points="350,196 380,168 590,168 560,196" fill="#2E4F8F"/><polygon points="560,196 590,168 590,304 560,332" fill="#0C1A3E"/><rect x="350" y="196" width="210" height="136" fill="#14285A"/><polygon points="620,188 650,160 845,160 815,188" fill="#5AD3D3"/><polygon points="815,188 845,160 845,294 815,322" fill="#138C8C"/><rect x="620" y="188" width="195" height="134" fill="#1FB5B5"/><polygon points="30,322 60,294 245,294 215,322" fill="#2E4F8F"/><polygon points="215,322 245,294 245,434 215,462" fill="#0C1A3E"/><rect x="30" y="322" width="185" height="140" fill="#14285A"/><polygon points="735,332 765,304 935,304 905,332" fill="#5AD3D3"/><polygon points="905,332 935,304 935,438 905,466" fill="#138C8C"/><rect x="735" y="332" width="170" height="134" fill="#1FB5B5"/><polygon points="255,342 285,314 475,314 445,342" fill="#2E4F8F"/><polygon points="445,342 475,314 475,439 445,467" fill="#0C1A3E"/><rect x="255" y="342" width="190" height="125" fill="#14285A"/><polygon points="480,346 510,318 705,318 675,346" fill="#5AD3D3"/><polygon points="675,346 705,318 705,444 675,472" fill="#138C8C"/><rect x="480" y="346" width="195" height="126" fill="#1FB5B5"/><polygon points="160,482 190,454 410,454 380,482" fill="#2E4F8F"/><polygon points="380,482 410,454 410,558 380,586" fill="#0C1A3E"/><rect x="160" y="482" width="220" height="104" fill="#14285A"/><polygon points="410,482 440,454 645,454 615,482" fill="#5AD3D3"/><polygon points="615,482 645,454 645,568 615,596" fill="#138C8C"/><rect x="410" y="482" width="205" height="114" fill="#1FB5B5"/><polygon points="670,496 700,468 860,468 830,496" fill="#5AD3D3"/><polygon points="830,496 860,468 860,574 830,602" fill="#138C8C"/><rect x="670" y="496" width="160" height="106" fill="#1FB5B5"/><polygon points="490,600 640,600 612,716 580,716" fill="#0C1A3E"/><polygon points="615,612 645,584 755,584 725,612" fill="#5AD3D3"/><polygon points="725,612 755,584 755,688 725,716" fill="#138C8C"/><rect x="615" y="612" width="110" height="104" fill="#1FB5B5"/><rect x="183" y="722" width="586" height="32" rx="2" fill="#14285A"/><rect x="200" y="754" width="86" height="52" fill="#14285A"/><rect x="432" y="754" width="86" height="52" fill="#14285A"/><rect x="664" y="754" width="86" height="52" fill="#14285A"/><rect x="183" y="806" width="586" height="36" rx="2" fill="#14285A"/></svg></span>
+          <span>Built on our own floor at NWOT</span>
+          <span class="push">lotmind.ai</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Software for liquidation resellers</p>
+        <h1 style="margin-top:16px">Run the whole load <em>from a phone camera.</em></h1>
+        <p class="lede">LotMind runs a pallet resale business with almost no typing. It starts with value: a photo of the manifest tells you what the load is worth before you bid. Then it costs every lot back to the PO, lists everything on Shopify, and sells it with an AI sales rep. You always know what each load earned.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Become a design partner</a>
+          <span class="note">A few spots for resellers this winter</span>
+        </div>
+      </div>
+
+      <figure class="ticket" aria-label="Example load ticket">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="head">
+          <span class="po">PO 1043 · Load 212</span>
+          <span class="tag">Example load</span>
+        </div>
+        <ol>
+          <li><span class="dot"></span><span class="step">Deal Desk<span>Manifest photo → what to pay</span></span><span class="val">bid $1,840</span></li>
+          <li><span class="dot"></span><span class="step">Load Breaker<span>Break photos → 14 lots, cost each</span></span><span class="val">$131/lot</span></li>
+          <li><span class="dot"></span><span class="step">Shopify<span>Lots list themselves, priced</span></span><span class="val">14 live</span></li>
+          <li><span class="dot"></span><span class="step">Flex Bins<span>Snap a photo of where it sits</span></span><span class="val">PHOTO-0012</span></li>
+          <li><span class="dot"></span><span class="step">Steph<span>Sells, watches what's hot, reports back</span></span><span class="val">9 sold</span></li>
+        </ol>
+        <figcaption class="foot"><span>Profit on this PO so far</span><b>+$1,262</b></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section class="band" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>A complete loop for better valuations</h2>
+        <p>From the bid to the last sale, every unit stays tied to the purchase order it came from. Everything your agent sees and sells flows back to the Deal Desk, so every valuation is sharper than the last.</p>
+      </div>
+      <div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">The LotMind loop</span><span class="tag">6 modules · 1 PO</span></div>
+        <ol class="loop">
+          <li><span class="dot"></span><span class="name">Deal Desk</span><span class="what">Photograph the manifest, or let it read the deal emails in your inbox. Pick a deal and it tells you what the load is worth and what to pay, then makes the offer in a click and opens the PO, with the paperwork attached. <a href="#deal-desk">More below</a>.</span><span class="verb">value &amp; buy it</span></li>
+          
+          <li><span class="dot"></span><span class="name">Load Breaker</span><span class="what">Bought it as a pallet? Break it down to any increment you want: by the piece, the box or the pallet. Each lot gets its share of the cost, freight included.</span><span class="verb">break it</span></li>
+          <li><span class="dot"></span><span class="name">Shopify</span><span class="what">Lots list themselves, photographed and priced. From Shopify they sell on any marketplace. No store yet? We build your Shopify store for you, ready to sell.</span><span class="verb">list it</span></li>
+          <li><span class="dot"></span><span class="name">Flex Bins</span><span class="what">Flex bins: photo-locate your whole warehouse or a single rack, on the fly. A bin can be a racked shelf, a spot on the floor, or just a photo of where the lot sits. Add a row, take it away: completely flexible, no relabeling. Pick lists come straight from orders and show the photo.</span><span class="verb">locate it</span></li>
+          <li><span class="dot"></span><span class="name">Labeling</span><span class="what">Print labels with the load's QR code and the product barcode in one step. Buyers on your floor scan the QR and the live listing comes up: photos, what's inside, price. No more opening boxes to see what's inside.</span><span class="verb">label it</span></li>
+          <li><span class="dot"></span><span class="name">Customer Intelligence Agent</span><span class="what">Not just a chatbot. Your own AI sales agent knows your buyers and your entire inventory, negotiates and closes on her own. <a href="#agent">More below</a>.</span><span class="verb">sell it</span></li>
+          <li class="back"><span class="dot"></span><span class="name">Full circle</span><span class="what">Your agent feeds it all back to the Deal Desk: what's hot, what's not, what sold, for how much and how fast. Every sale sharpens the next bid.</span><span class="verb">learn from it</span></li>
+        </ol>
+        <div class="cfoot"><span>Typing required</span><b>almost none</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agent" id="deal-desk">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Deal Desk</p>
+        <h2>Buy from your inbox</h2>
+        <p>The loop starts where your deals already arrive: your email.</p>
+      </div>
+      <div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">Inbound deals</span><span class="tag">Value · offer · file</span></div>
+        <ul class="grid"><li><span class="dot"></span><div><h3>Reads your deal emails</h3><p>Load offers from your suppliers land in your inbox. The Deal Desk reads them, manifests and all.</p></div></li><li><span class="dot"></span><div><h3>You choose what to value</h3><p>Pick the deals worth a look and it tells you what each load is worth and what to pay.</p></div></li><li><span class="dot"></span><div><h3>Offer in one click</h3><p>Create the offer and send it back from your mail with a single click.</p></div></li><li><span class="dot"></span><div><h3>Paperwork attached</h3><p>Invoice, manifest and shipping documents attach to the PO automatically.</p></div></li><li><span class="dot"></span><div><h3>Shipping logged</h3><p>Every shipping email, from pickup to delivery, is logged to the load.</p></div></li><li><span class="dot"></span><div><h3>All from your mail</h3><p>No new portal to learn. You work from your inbox and the PO keeps itself up to date.</p></div></li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="agent" id="agent">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Customer Intelligence Agent</p>
+        <h2>Not just a chatbot</h2>
+        <p>An autonomous AI sales agent that knows your buyers, knows your inventory, and closes deals while you run the floor.</p>
+      </div>
+      <div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">Your agent</span><span class="tag">Works 24/7</span></div>
+        <ul class="grid"><li><span class="dot"></span><div><h3>Knows your buyers</h3><p>What each buyer is looking at right now, and their whole history with you: what they bought, what they asked about, what they paid.</p></div></li><li><span class="dot"></span><div><h3>Knows your entire inventory</h3><p>Every lot, every bin, every cost and what's live, so she only offers what you actually have, at prices you set.</p></div></li><li><span class="dot"></span><div><h3>Negotiates and closes</h3><p>Answers by text, DM, email and chat, counters within your rules, and closes the sale on her own.</p></div></li><li><span class="dot"></span><div><h3>Watches what's hot</h3><p>Tracks every listing to see what's moving and what's not, and pushes the right lots to the right buyers.</p></div></li><li><span class="dot"></span><div><h3>Feeds the Deal Desk</h3><p>Everything she sees and sells goes back to the Deal Desk, so every valuation is sharper than the last.</p></div></li><li><span class="dot"></span><div><h3>Yours to name</h3><p>She works under your store's name. Call her whatever you like; at NWOT she's Steph.</p></div></li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="agent" id="nwot">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">NWOT sales channel</p>
+        <h2>No wholesale buyers yet?</h2>
+        <p>Sell your lots on NWOT. Every LotMind customer can use NWOT as a sales channel.</p>
+      </div>
+      <div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">Sell through NWOT</span><span class="tag">Reduced rate for members</span></div>
+        <ul class="grid"><li><span class="dot"></span><div><h3>List on NWOT</h3><p>Put your lots in front of NWOT's wholesale buyers from day one, at a reduced rate for LotMind members.</p></div></li><li><span class="dot"></span><div><h3>We print the labels</h3><p>NWOT prints the shipping label. You stick it on and put it on the truck.</p></div></li><li><span class="dot"></span><div><h3>Get paid</h3><p>Payment lands after the return window closes. No chasing invoices.</p></div></li></ul>
+      </div>
+    </div>
+  </section>
+  <section id="who">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Who it's for</p>
+        <h2>Built on our own floor</h2>
+        <p>We run NWOT, a liquidation business that buys and breaks pallets every week. We built LotMind because nothing on the market kept the PO attached to each item.</p>
+      </div>
+      <div class="who">
+        <div class="card"><div class="chead"><span class="po">Resellers</span><span class="tag">Now</span></div><div class="body"><h3>Pallet and truckload buyers</h3><p>Wholesale or retail, one person or a full warehouse. Bid with real numbers and stop typing everything twice.</p></div></div>
+        <div class="card"><div class="chead"><span class="po">Retailers</span><span class="tag">Next</span></div><div class="body"><h3>The teams that hold the returns</h3><p>See what returned goods are worth and where they recover the most, before they go to liquidation.</p></div></div>
+        <div class="card"><div class="chead"><span class="po">Thrift and nonprofit</span><span class="tag">Next</span></div><div class="body"><h3>Sorting at the table</h3><p>AI valuation and sorting from a photo, so donated goods go to the right shelf at the right price.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2 style="margin-top:12px">Try it on your next load</h2>
+        <p>We're opening LotMind to a small group of resellers as design partners. Investors and retail returns teams are welcome too.</p>
+      </div>
+      <div class="card contact-card"><span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span><div class="chead"><span class="po">Design partner request</span><span class="tag">Spots open</span></div><div class="body"><span class="addr mailaddr" id="addr">jeff@lotmind.ai</span><div class="row">
+          <a class="btn primary" href="mailto:jeff@lotmind.ai?subject=LotMind">Email Jeff</a>
+          <button class="btn ghost" id="copy" type="button">Copy address</button>
+          <span class="copied" id="copied" hidden>Copied</span>
+        </div></div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 LotMind · Southern California</span>
+    <span>lotmind.ai</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("copy").addEventListener("click", async () => {
+  const done = document.getElementById("copied");
+  try { await navigator.clipboard.writeText("jeff@lotmind.ai"); done.hidden = false; setTimeout(() => (done.hidden = true), 1800); }
+  catch { const r = document.createRange(); r.selectNodeContents(document.getElementById("addr")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+});
+</script>
+
+</body>
+</html>
