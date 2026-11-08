@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LotMind Rep</title>
+<meta name="description" content="LotMind Rep is the CRM with a brain: an AI sales rep and assistant that answers every buyer, offers the right loads, negotiates and writes the orders.">
+<meta property="og:title" content="LotMind Rep">
+<meta property="og:description" content="LotMind Rep is the CRM with a brain: an AI sales rep and assistant that answers every buyer, offers the right loads, negotiates and writes the orders.">
+<meta property="og:url" content="https://lotmind.ai/rep/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14285A">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>html,body{margin:0} img{max-width:100%} [hidden]{display:none!important}</style>
+</head>
+<body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Single dark brand look on purpose, taken from the LotMind hero lockup: charcoal and navy, teal light, the mark backlit. Layout: a warehouse load ticket carries the story. Hero = the claim + one example ticket; then the loop as a route, then who it's for, then contact. */
+:root {
+  color-scheme: dark;
+  --navy: #14285A;
+  --navy-deep: #0C1A3E;
+  --teal: #1FB5B5;
+  --teal-hi: #5AD3D3;
+  --bg: #1C1D21;            /* charcoal ground, from the hero lockup */
+  --surface: #0C1A3E;       /* navy bands */
+  --ink: #FFFFFF;
+  --muted: #9AA7B8;
+  --line: #2E4F8F;
+  --brand-a: #FFFFFF;       /* "Lot" in the wordmark on dark */
+  --teal-ink: #1FB5B5;
+  --ticket: #14285A;
+  --navy-2: #1C3570;
+  --on-navy: #E6EBF5;
+  --on-navy-muted: #A9B6D3;
+  --display: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 var(--body); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+a { color: var(--teal-ink); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-ink); }
+
+header.top { padding-block: 22px; }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; font: 600 27px/1 var(--display); letter-spacing: -0.02em; text-decoration: none; }
+.wordmark .mark { width: 60px; height: auto; flex: none; filter: drop-shadow(0 0 4px rgba(90,211,211,.9)) drop-shadow(0 0 14px rgba(31,181,181,.7)); }
+.wordmark .glow { position: relative; display: inline-grid; place-items: center; padding: 8px; border-radius: 50%; background: radial-gradient(circle, rgba(198,245,245,.55) 0%, rgba(31,181,181,.35) 45%, rgba(31,181,181,0) 72%); }
+.bigmark { position: relative; display: grid; place-items: center; width: 220px; aspect-ratio: 1; max-width: 100%; }
+.bigmark::before { content: ""; position: absolute; inset: -40%; border-radius: 50%; background: radial-gradient(circle, rgba(198,245,245,.8) 0%, rgba(31,181,181,.6) 28%, rgba(20,40,90,.35) 52%, rgba(30,32,38,0) 72%); }
+.bigmark svg { position: relative; width: 100%; height: auto; filter: drop-shadow(0 0 6px rgba(90,211,211,.9)) drop-shadow(0 0 28px rgba(31,181,181,.6)); }
+.wordmark .a { color: var(--brand-a); } .wordmark .b { color: var(--teal); }
+.top nav { display: flex; gap: 22px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+
+.hero { padding-block: 40px 72px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(34px, 5.2vw, 58px); line-height: 1.06; font-weight: 700; color: var(--ink); }
+.hero h1 em { font-style: normal; color: var(--teal); text-shadow: 0 0 28px rgba(31,181,181,.45); }
+.hero .lede { margin-top: 22px; font-size: 19px; color: var(--muted); max-width: 34em; }
+.cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 10px; font: 600 16px/1 var(--body); padding: 15px 22px; border-radius: 6px; border: 0; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--teal); color: var(--navy-deep); box-shadow: 0 0 24px -4px rgba(31,181,181,.6); }
+.btn.primary:hover { background: var(--teal-hi); }
+.cta .note { font-size: 14px; color: var(--muted); }
+
+/* the load ticket */
+.ticket { background: var(--ticket); border: 1px solid var(--line); border-radius: 10px; font-family: var(--mono); font-size: 13.5px; position: relative; box-shadow: 0 0 0 1px rgba(31,181,181,.15), 0 24px 60px -24px rgba(31,181,181,.35); }
+.ticket .head { display: flex; justify-content: space-between; gap: 12px; padding: 18px 20px 14px; border-bottom: 1px dashed var(--line); flex-wrap: wrap; }
+.ticket .po { font-weight: 500; font-size: 15px; color: var(--ink); }
+.ticket .tag { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.ticket ol { list-style: none; margin: 0; padding: 8px 20px 6px; }
+.ticket li { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.ticket li:last-child { border-bottom: 0; }
+.ticket .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); align-self: center; }
+.ticket .step { color: var(--ink); font-family: var(--body); font-weight: 600; font-size: 14.5px; }
+.ticket .step span { display: block; font-family: var(--mono); font-weight: 400; font-size: 12.5px; color: var(--muted); }
+.ticket .val { color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ticket .foot { display: flex; justify-content: space-between; gap: 12px; padding: 14px 20px 18px; border-top: 1px dashed var(--line); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.ticket .foot b { color: var(--teal-ink); font-weight: 500; font-size: 16px; }
+.ticket .stub { position: absolute; top: 58px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); }
+.ticket .stub.l { left: -9px; } .ticket .stub.r { right: -9px; }
+
+section { padding-block: 72px; }
+section.band { background: var(--surface); border-block: 1px solid var(--line); }
+section.band .card .stub { background: var(--surface); }
+section.alt { background: var(--surface); border-block: 1px solid var(--line); }
+section.navy { background: var(--navy); color: var(--on-navy); }
+section.navy .eyebrow { color: var(--teal); }
+section.navy .sec-head p, section.navy .route p { color: var(--on-navy-muted); }
+section.navy .route li { border-top-color: var(--teal); }
+section.navy .route li::before { color: var(--on-navy-muted); }
+section.navy .route li.back { border-top-color: #FFFFFF; }
+section.navy .route li.back::before { color: var(--teal); }
+.sec-head { display: grid; gap: 12px; max-width: 40em; margin-bottom: 40px; }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; font-weight: 700; }
+.sec-head p { color: var(--muted); font-size: 18px; }
+
+/* the loop as a route */
+.route { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; counter-reset: stop; }
+.route li { counter-increment: stop; display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 3px solid var(--navy); }
+.route li::before { content: "Step " counter(stop); font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.route h3 { font-size: 20px; font-weight: 600; }
+.route p { color: var(--muted); font-size: 15.5px; }
+.route li.back { border-top-color: var(--teal); background: transparent; }
+.route li.back::before { content: "Then"; color: var(--teal-ink); }
+
+.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.points div { display: grid; gap: 10px; align-content: start; }
+.points h3 { font-size: 20px; font-weight: 700; }
+.points p { color: var(--muted); font-size: 16px; }
+.points .k { font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--teal-ink); }
+
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.contact h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; }
+.contact p { color: var(--muted); margin-top: 14px; font-size: 18px; max-width: 32em; }
+.mailcard { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; gap: 14px; }
+.mailaddr { font: 500 22px/1.2 var(--mono); color: var(--ink); user-select: all; overflow-wrap: anywhere; }
+.contact-card .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--teal); padding: 12px 16px; font-size: 15px; }
+.copied { font-size: 14px; color: var(--teal-ink); }
+
+footer { padding-block: 36px 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
+
+
+
+/* lockup band, straight from the brand card */
+.lockup { padding-block: 24px 64px; }
+.lockup .wrap { display: flex; align-items: center; justify-content: center; gap: clamp(28px, 5vw, 72px); flex-wrap: wrap; }
+.lockup .bigmark { width: clamp(180px, 26vw, 340px); }
+.lockup .words { display: grid; gap: 16px; min-width: 0; }
+.lockup .big { font: 600 clamp(64px, 11vw, 136px)/0.95 var(--display); letter-spacing: -0.035em; }
+.lockup .big .a { color: #FFFFFF; } .lockup .big .b { color: var(--teal); text-shadow: 0 0 40px rgba(31,181,181,.55); }
+.lockup .tag { font: 500 clamp(20px, 2.4vw, 30px)/1.25 var(--display); color: #FFFFFF; letter-spacing: -0.01em; }
+.lockup .tag em { font-style: normal; color: var(--teal); }
+.lockup .cap { font: 500 14px/1.4 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; font: 600 14px/1 var(--body); color: #FFFFFF; background: rgba(12,26,62,.5); }
+.pill svg { width: 14px; height: 14px; flex: none; }
+
+.agent .grid { list-style: none; margin: 0; padding: 6px 22px 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.agent .grid li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); align-content: start; }
+.agent .grid .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); margin-top: 7px; }
+.agent .grid h3 { font: 600 17px/1.3 var(--display); }
+.agent .grid p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.agent .grid li:nth-last-child(-n+3) { border-bottom: 0; }
+@media (max-width: 900px) { .agent .grid { grid-template-columns: minmax(0, 1fr); } .agent .grid li:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); } .agent .grid li:last-child { border-bottom: 0; } }
+.hero .wrap.solo { grid-template-columns: minmax(0, 1fr); }
+.hero .wrap.solo > div { max-width: 46em; }
+.example-wrap { max-width: 560px; }
+.plans-card { margin-top: 22px; }
+.plans { list-style: none; margin: 0; padding: 6px 22px 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.plans li { padding: 18px 0; }
+.plans h3 { font: 600 17px/1.3 var(--display); }
+.plans .amt { font: 700 34px/1.1 var(--display); color: var(--teal-ink); margin-top: 6px; }
+.plans .amt span { font: 500 14px/1 var(--mono); color: var(--muted); margin-left: 4px; }
+.plans li p:last-child { color: var(--muted); font-size: 15px; margin-top: 8px; }
+@media (max-width: 900px) { .plans { grid-template-columns: minmax(0, 1fr); } .plans li { border-bottom: 1px solid var(--line); } .plans li:last-child { border-bottom: 0; } }
+.vs { padding: 6px 22px 12px; }
+.vs-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+.vs-row:last-child { border-bottom: 0; }
+.vs-row span:nth-child(2) { color: var(--muted); }
+.vs-row span:nth-child(3) { color: var(--ink); font-weight: 600; }
+.vs-h span { font: 500 12px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted) !important; font-weight: 500 !important; }
+.vs-h span:nth-child(3) { color: var(--teal-ink) !important; }
+.sec-head h2 em { font-style: normal; color: var(--teal); text-shadow: 0 0 28px rgba(31,181,181,.45); }
+@media (max-width: 700px) { .vs-row { grid-template-columns: minmax(0, 1fr); gap: 4px; } .vs-h { display: none; } .vs-row span:first-child { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--teal-ink); } .vs-row:not(.vs-h) span:nth-child(2)::before { content: "A regular CRM: "; } .vs-row:not(.vs-h) span:nth-child(3)::before { content: "LotMind Rep: "; color: var(--teal-ink); } }
+
+.sec-row.solo { grid-template-columns: minmax(0, 1fr); margin-bottom: 28px; }
+.sec-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 40px; align-items: center; margin-bottom: 40px; }
+.sec-row .sec-head { margin-bottom: 0; }
+.scene { margin: 0; background: radial-gradient(circle at 50% 40%, rgba(31,181,181,.12), transparent 70%); border-radius: 14px; }
+.scene-svg { display: block; width: 100%; height: auto; }
+.shots { margin: 0 0 40px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 0 60px -20px rgba(31,181,181,.55); background: #15171B; }
+.shots img { display: block; width: 100%; height: auto; }
+@media (max-width: 700px) { .shots figcaption { display: none; } }
+.shots figcaption { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 12px 18px; border-top: 1px dashed var(--line); }
+@media (max-width: 900px) { .sec-row { grid-template-columns: minmax(0, 1fr); gap: 24px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .scene .flow line { animation: flow 1.2s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset: -20; } }
+  .scene .pulse { animation: pulse 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pulse { 50% { opacity: .55; } }
+  .scene .pop { animation: pop 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pop { 0%, 60%, 100% { transform: scale(1); } 70% { transform: scale(1.08); } }
+}
+/* card system: everything is a load ticket */
+.card { background: var(--ticket); border: 1px solid var(--line); border-radius: 10px; position: relative; box-shadow: 0 0 0 1px rgba(31,181,181,.15), 0 24px 60px -24px rgba(31,181,181,.35); }
+.card .stub { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line); top: 54px; }
+.card .stub.l { left: -9px; } .card .stub.r { right: -9px; }
+.card .chead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding: 18px 22px 14px; border-bottom: 1px dashed var(--line); font-family: var(--mono); }
+.card .chead .po { font-weight: 500; font-size: 15px; }
+.card .chead .tag { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.card .cfoot { padding: 14px 22px 18px; border-top: 1px dashed var(--line); font-family: var(--mono); font-size: 13.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.card .cfoot b { color: var(--teal-ink); font-weight: 500; }
+.loop { list-style: none; margin: 0; padding: 4px 22px; }
+.loop li { display: grid; grid-template-columns: 14px 150px minmax(0, 1fr) auto; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.loop li:last-child { border-bottom: 0; }
+.loop .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); align-self: center; }
+.loop .name { font: 600 17px/1.3 var(--display); color: var(--ink); }
+.loop .what { color: var(--muted); font-size: 15.5px; }
+.loop .verb { font: 500 13px/1 var(--mono); color: var(--teal-hi); border: 1px solid var(--teal); background: rgba(31,181,181,.12); padding: 6px 9px; border-radius: 4px; white-space: nowrap; }
+.loop li.back .dot { background: #FFFFFF; }
+.loop li.back .verb { color: #FFFFFF; border-color: #FFFFFF; background: transparent; }
+.who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.who .card .body { padding: 18px 22px 22px; display: grid; gap: 10px; }
+.who h3 { font-size: 19px; font-weight: 600; }
+.who p { color: var(--muted); font-size: 15.5px; }
+.contact-card .body { padding: 20px 22px 22px; display: grid; gap: 16px; }
+@media (max-width: 900px) { .who { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 640px) {
+  .loop li { grid-template-columns: 14px minmax(0, 1fr) auto; }
+  .loop .what { grid-column: 2 / -1; }
+}
+@media (max-width: 900px) {
+  .hero .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .route { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .points { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+@media (max-width: 520px) {
+  .route { grid-template-columns: minmax(0, 1fr); }
+  .top nav { display: none; }
+  section { padding-block: 56px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ticket li { animation: in .5s ease both; }
+  .ticket li:nth-child(2) { animation-delay: .08s; } .ticket li:nth-child(3) { animation-delay: .16s; }
+  .ticket li:nth-child(4) { animation-delay: .24s; } .ticket li:nth-child(5) { animation-delay: .32s; }
+  @keyframes in { from { transform: translateY(4px); } to { transform: none; } }
+}
+
+/* Version D: the brand card itself is the hero, on an isometric crate-grid floor */
+:root { --bg: #15171B; --surface: #1B1E24; --ticket: #14285A; }
+body { background-color: var(--bg); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='24'%3E%3Cpath d='M0 12 L20 0 L40 12 L20 24 Z' fill='none' stroke='%231FB5B5' stroke-opacity='0.07'/%3E%3C/svg%3E"); }
+section.band { background: rgba(12,26,62,.55); }
+.lockup { padding-block: 8px 64px; }
+.lockup .wrap { display: block; }
+.brandcard { background: #222222; border: 1px solid #2E4F8F; border-radius: 18px; padding: clamp(22px, 4vw, 48px) clamp(20px, 5vw, 64px); display: grid; gap: clamp(28px, 4vw, 48px); box-shadow: 0 0 0 1px rgba(31,181,181,.12), 0 40px 90px -30px rgba(31,181,181,.45); }
+.brandcard .row { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; font: 600 12px/1.3 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.brandcard .row.bottom { text-transform: none; letter-spacing: 0; font-weight: 500; font-size: 13px; justify-content: flex-start; }
+.brandcard .row.bottom .push { margin-left: auto; }
+.brandcard .mid { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 72px); flex-wrap: wrap; }
+.brandcard .vr { width: 1px; height: 32px; background: var(--muted); opacity: .4; }
+.brandcard .mini { display: inline-flex; align-items: center; gap: 12px; font: 600 26px/1 var(--display); letter-spacing: -0.02em; }
+.brandcard .mini svg { width: 44px; height: auto; }
+.brandcard .icon { width: 52px; height: 52px; border-radius: 13px; background: #F4F6F8; display: grid; place-items: center; box-shadow: 0 0 22px -4px rgba(31,181,181,.6); }
+.brandcard .icon svg { width: 38px; height: auto; }
+@media (max-width: 520px) { .brandcard .row.bottom .vr, .brandcard .row.bottom .push { display: none; } }
+
+</style>
+
+<style>
+.ph { padding-block: 36px 56px; }
+.ph h1 { font-size: clamp(34px, 5.2vw, 56px); line-height: 1.06; font-weight: 700; }
+.ph h1 em { font-style: normal; color: var(--teal); text-shadow: 0 0 28px rgba(31,181,181,.45); }
+.ph .lede { margin-top: 18px; font-size: 19px; color: var(--muted); max-width: 40em; }
+.screens { display: grid; gap: 48px; padding-block: 24px 72px; }
+.screens h3 { font: 600 22px/1.25 var(--display); margin-top: 6px; }
+.screens .sub { color: var(--muted); margin: 6px 0 16px; max-width: 46em; }
+.screens figure { margin: 0; }
+.screens .shots { margin: 0; }
+.screens .shots img { cursor: zoom-in; }
+video.demo { width: 100%; border-radius: 14px; border: 1px solid var(--line); background: #000; display: block; }
+.contact2 { padding-block: 56px 72px; }
+.contact2 .row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+</style>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="LotMind home"><span class="glow"><svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 932 872" role="img" aria-label="LotMind mark: a brain of navy and teal cubes on a pallet"><polygon points="240,62 270,34 470,34 440,62" fill="#2E4F8F"/><polygon points="440,62 470,34 470,162 440,190" fill="#0C1A3E"/><rect x="240" y="62" width="200" height="128" fill="#14285A"/><polygon points="480,42 510,14 710,14 680,42" fill="#5AD3D3"/><polygon points="680,42 710,14 710,144 680,172" fill="#138C8C"/><rect x="480" y="42" width="200" height="130" fill="#1FB5B5"/><polygon points="110,186 140,158 330,158 300,186" fill="#2E4F8F"/><polygon points="300,186 330,158 330,284 300,312" fill="#0C1A3E"/><rect x="110" y="186" width="190" height="126" fill="#14285A"/><polygon points="350,196 380,168 590,168 560,196" fill="#2E4F8F"/><polygon points="560,196 590,168 590,304 560,332" fill="#0C1A3E"/><rect x="350" y="196" width="210" height="136" fill="#14285A"/><polygon points="620,188 650,160 845,160 815,188" fill="#5AD3D3"/><polygon points="815,188 845,160 845,294 815,322" fill="#138C8C"/><rect x="620" y="188" width="195" height="134" fill="#1FB5B5"/><polygon points="30,322 60,294 245,294 215,322" fill="#2E4F8F"/><polygon points="215,322 245,294 245,434 215,462" fill="#0C1A3E"/><rect x="30" y="322" width="185" height="140" fill="#14285A"/><polygon points="735,332 765,304 935,304 905,332" fill="#5AD3D3"/><polygon points="905,332 935,304 935,438 905,466" fill="#138C8C"/><rect x="735" y="332" width="170" height="134" fill="#1FB5B5"/><polygon points="255,342 285,314 475,314 445,342" fill="#2E4F8F"/><polygon points="445,342 475,314 475,439 445,467" fill="#0C1A3E"/><rect x="255" y="342" width="190" height="125" fill="#14285A"/><polygon points="480,346 510,318 705,318 675,346" fill="#5AD3D3"/><polygon points="675,346 705,318 705,444 675,472" fill="#138C8C"/><rect x="480" y="346" width="195" height="126" fill="#1FB5B5"/><polygon points="160,482 190,454 410,454 380,482" fill="#2E4F8F"/><polygon points="380,482 410,454 410,558 380,586" fill="#0C1A3E"/><rect x="160" y="482" width="220" height="104" fill="#14285A"/><polygon points="410,482 440,454 645,454 615,482" fill="#5AD3D3"/><polygon points="615,482 645,454 645,568 615,596" fill="#138C8C"/><rect x="410" y="482" width="205" height="114" fill="#1FB5B5"/><polygon points="670,496 700,468 860,468 830,496" fill="#5AD3D3"/><polygon points="830,496 860,468 860,574 830,602" fill="#138C8C"/><rect x="670" y="496" width="160" height="106" fill="#1FB5B5"/><polygon points="490,600 640,600 612,716 580,716" fill="#0C1A3E"/><polygon points="615,612 645,584 755,584 725,612" fill="#5AD3D3"/><polygon points="725,612 755,584 755,688 725,716" fill="#138C8C"/><rect x="615" y="612" width="110" height="104" fill="#1FB5B5"/><rect x="183" y="722" width="586" height="32" rx="2" fill="#14285A"/><rect x="200" y="754" width="86" height="52" fill="#14285A"/><rect x="432" y="754" width="86" height="52" fill="#14285A"/><rect x="664" y="754" width="86" height="52" fill="#14285A"/><rect x="183" y="806" width="586" height="36" rx="2" fill="#14285A"/></svg></span><span><span class="a">Lot</span><span class="b">Mind</span></span></a>
+    <nav aria-label="Pages">
+      <a href="/">Home</a>
+      <a href="/bins/">Flex Bins</a>
+      <a href="/rep/">LotMind Rep</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="ph"><div class="wrap"><p class="eyebrow">LotMind Rep</p><h1 style="margin-top:12px">The CRM with a <em>brain</em></h1><p class="lede">It doesn't just track your buyers. It sells to them. Your own AI sales rep and assistant answers every message, offers the right loads, negotiates, and does the back office: quotes, offers and Shopify draft orders, day and night.</p><div class="cta"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdI_nHlPs43hXMa3tG5KU7I02lXizA7k_jM4yVhFi7bq6P3Fg/viewform" target="_blank" rel="noopener">Sign up</a><span class="note">A Shopify app · you name your rep</span></div></div></section>
+<section class="agent"><div class="wrap"><div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">LotMind Rep</span><span class="tag">Your CRM and your salesperson</span></div>
+        <ul class="grid"><li><span class="dot"></span><div><h3>Every buyer, remembered</h3><p>What they bought, how often they reorder, what they passed on, and how you're allowed to reach them. Your CRM, built in.</p></div></li><li><span class="dot"></span><div><h3>One inbox, every channel</h3><p>Texts, WhatsApp, Messenger, Instagram, email, your store chat and lead forms, all answered in one place, day and night.</p></div></li><li><span class="dot"></span><div><h3>Asks the right questions</h3><p>It finds out what each buyer runs, what they sell and how much they move, then ranks and groups them for you.</p></div></li><li><span class="dot"></span><div><h3>Offers the right load</h3><p>When new stock lands, it picks the buyers most likely to want it and writes each offer. Click to send, or let it send on its own.</p></div></li><li><span class="dot"></span><div><h3>Negotiates and closes</h3><p>It haggles within your limits, writes the Shopify draft order and sends the checkout link. When the buyer pays, it's an order.</p></div></li><li><span class="dot"></span><div><h3>Hands your team the calls</h3><p>Buyers it can't text or email go on a daily call list for your team, with what each one bought before.</p></div></li><li><span class="dot"></span><div><h3>Knows everything you have</h3><p>Every item, where it is and what it cost, so it only offers what's really for sale, at your prices.</p></div></li><li><span class="dot"></span><div><h3>Feeds the Deal Desk</h3><p>What sells, and for how much, helps price your next purchase.</p></div></li><li><span class="dot"></span><div><h3>Yours to name</h3><p>She works under your store's name. Call her whatever you like.</p></div></li></ul>
+      </div>
+    </div></section>
+<section><div class="wrap"><div class="sec-head"><p class="eyebrow">The screens</p><h2 style="margin-top:12px">See it work</h2></div><div class="screens"><div><p class="eyebrow">01</p><h3>Your morning</h3><p class="sub">What your rep did overnight: buyers answered, quotes sent, deals closed, and what is waiting for you.</p><figure class="shots"><a href="welcome.webp" target="_blank" rel="noopener"><img src="welcome.webp" width="2040" height="1320" loading="lazy" decoding="async" alt="LotMind Rep Your morning screen"></a></figure></div><div><p class="eyebrow">02</p><h3>One inbox, every channel</h3><p class="sub">WhatsApp, texts, Messenger, Instagram, email and store chat in one place. Your rep answers, quotes and negotiates within your rules, and hands you the deals to approve.</p><figure class="shots"><a href="main.webp" target="_blank" rel="noopener"><img src="main.webp" width="2040" height="1520" loading="lazy" decoding="async" alt="LotMind Rep One inbox, every channel screen"></a></figure></div><div><p class="eyebrow">03</p><h3>Every buyer, remembered</h3><p class="sub">What they buy, how often, what they spend, how you can reach them, and your rep's notes. The CRM part, filled in for you.</p><figure class="shots"><a href="buyer.webp" target="_blank" rel="noopener"><img src="buyer.webp" width="2040" height="1320" loading="lazy" decoding="async" alt="LotMind Rep Every buyer, remembered screen"></a></figure></div><div><p class="eyebrow">04</p><h3>Deals</h3><p class="sub">Every deal in progress, from first offer to paid. Your rep writes the Shopify draft order; when the buyer pays, it's an order.</p><figure class="shots"><a href="deals.webp" target="_blank" rel="noopener"><img src="deals.webp" width="2040" height="1320" loading="lazy" decoding="async" alt="LotMind Rep Deals screen"></a></figure></div><div><p class="eyebrow">05</p><h3>Suggested offers</h3><p class="sub">When new loads land, your rep picks the buyers most likely to want them and writes each offer. Click to send.</p><figure class="shots"><a href="offers.webp" target="_blank" rel="noopener"><img src="offers.webp" width="2040" height="2181" loading="lazy" decoding="async" alt="LotMind Rep Suggested offers screen"></a></figure></div><div><p class="eyebrow">06</p><h3>Connections</h3><p class="sub">Plug in Shopify, your socials, store chat, email and text. Your rep works every channel under your store's name.</p><figure class="shots"><a href="connections.webp" target="_blank" rel="noopener"><img src="connections.webp" width="2040" height="2396" loading="lazy" decoding="async" alt="LotMind Rep Connections screen"></a></figure></div></div></div></section>
+<section class="band" id="crm">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Replace your CRM</p>
+        <h2>Other CRMs keep a list. LotMind Rep works it.</h2>
+        <p>A regular CRM stores your buyers and reminds you to follow up. LotMind Rep does the following up, and it's built for loads, pallets and truckloads.</p>
+      </div>
+      <div class="card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">A regular CRM vs LotMind Rep</span><span class="tag">Same buyers, different job</span></div>
+        <div class="vs" role="table" aria-label="A regular CRM compared with LotMind Rep">
+          <div class="vs-row vs-h" role="row"><span role="columnheader">The job</span><span role="columnheader">A regular CRM</span><span role="columnheader">LotMind Rep</span></div>
+          <div class="vs-row" role="row"><span role="cell">A buyer messages at 2am</span><span role="cell">Waits in the inbox</span><span role="cell">Answered in seconds, on the same channel</span></div>
+          <div class="vs-row" role="row"><span role="cell">New load arrives</span><span role="cell">You build a list and write the email</span><span role="cell">Matched to the right buyers, offers written</span></div>
+          <div class="vs-row" role="row"><span role="cell">Buyer asks for a better price</span><span role="cell">You take it from there</span><span role="cell">Negotiates within your limits</span></div>
+          <div class="vs-row" role="row"><span role="cell">Deal agreed</span><span role="cell">You type up the order</span><span role="cell">Draft order and checkout link sent</span></div>
+          <div class="vs-row" role="row"><span role="cell">A buyer goes quiet</span><span role="cell">A reminder for someone</span><span role="cell">Notices they're overdue and offers a deal</span></div>
+          <div class="vs-row" role="row"><span role="cell">Knows pallets and truckloads</span><span role="cell">No</span><span role="cell">Built for them</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="band contact2" id="contact"><div class="wrap"><p class="eyebrow">Get in touch</p><h2 style="margin-top:12px">Put a rep on your buyers</h2><p style="margin-top:10px;color:var(--muted)">We're signing up our first stores now.</p><div class="row"><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdI_nHlPs43hXMa3tG5KU7I02lXizA7k_jM4yVhFi7bq6P3Fg/viewform" target="_blank" rel="noopener">Sign up</a><a class="btn ghost" href="mailto:jeff@lotmind.ai?subject=LotMind">Email Jeff</a></div></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 LotMind · Southern California</span>
+    <span><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/support/">Support</a> · lotmind.ai</span>
+  </div>
+</footer>
+</body>
+</html>
