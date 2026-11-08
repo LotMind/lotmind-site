@@ -160,6 +160,14 @@ footer a { color: var(--muted); }
 .hero .wrap.solo { grid-template-columns: minmax(0, 1fr); }
 .hero .wrap.solo > div { max-width: 46em; }
 .example-wrap { max-width: 560px; }
+.plans-card { margin-top: 22px; }
+.plans { list-style: none; margin: 0; padding: 6px 22px 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.plans li { padding: 18px 0; }
+.plans h3 { font: 600 17px/1.3 var(--display); }
+.plans .amt { font: 700 34px/1.1 var(--display); color: var(--teal-ink); margin-top: 6px; }
+.plans .amt span { font: 500 14px/1 var(--mono); color: var(--muted); margin-left: 4px; }
+.plans li p:last-child { color: var(--muted); font-size: 15px; margin-top: 8px; }
+@media (max-width: 900px) { .plans { grid-template-columns: minmax(0, 1fr); } .plans li { border-bottom: 1px solid var(--line); } .plans li:last-child { border-bottom: 0; } }
 .vs { padding: 6px 22px 12px; }
 .vs-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
 .vs-row:last-child { border-bottom: 0; }
@@ -387,7 +395,17 @@ section.band { background: rgba(12,26,62,.55); }
       <div class="card">
         <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
         <div class="chead"><span class="po">Where everything is</span><span class="tag">Change it anytime</span></div>
-        <ul class="grid"><li><span class="dot"></span><div><h3>Any spot can be a bin</h3><p>A shelf, a rack, a corner of the floor. Set up one rack or the whole warehouse.</p></div></li><li><span class="dot"></span><div><h3>Photo grids</h3><p>No racking? Take one photo of the floor, lay a grid on it, and tap the spot where the pallet sits.</p></div></li><li><span class="dot"></span><div><h3>Move things around</h3><p>Add a row, take one away, rearrange. Nothing to relabel.</p></div></li><li><span class="dot"></span><div><h3>Pick lists with photos</h3><p>When an order comes in, you get a list of where each item is, with the photo.</p></div></li><li><span class="dot"></span><div><h3>Scan to put away</h3><p>Scan the load, scan the bin, done.</p></div></li><li><span class="dot"></span><div><h3>Nothing goes missing</h3><p>Anything that came in but isn't in a bin or sold shows up in red.</p></div></li></ul>
+        <ul class="grid"><li><span class="dot"></span><div><h3>Any spot can be a bin</h3><p>A shelf, a rack, a corner of the floor. Set up one rack or the whole warehouse.</p></div></li><li><span class="dot"></span><div><h3>Photo grids</h3><p>No racking? Take one photo of the floor, lay a grid on it, and tap the spot where the pallet sits.</p></div></li><li><span class="dot"></span><div><h3>Move things around</h3><p>Add a row, take one away, rearrange. Nothing to relabel.</p></div></li><li><span class="dot"></span><div><h3>Pick lists with photos</h3><p>When an order comes in, you get a list of where each item is, with the photo.</p></div></li><li><span class="dot"></span><div><h3>Scan to put away</h3><p>Scan the load, scan the bin, done.</p></div></li><li><span class="dot"></span><div><h3>Nothing goes missing</h3><p>Anything that came in but isn't in a bin or sold shows up in red.</p></div></li><li><span class="dot"></span><div><h3>Scoreboard</h3><p>Total inventory, aged inventory and value at cost, counted in pieces, boxes and pallets.</p></div></li><li><span class="dot"></span><div><h3>Labels if you want them</h3><p>Bin labels, clothing tags, box stickers and pallet labels, on Avery sheets, thermal rolls or your own label paper.</p></div></li><li><span class="dot"></span><div><h3>Scans on any phone</h3><p>iPhone or Android, in the browser or the Shopify app. Nothing to install.</p></div></li></ul>
+      </div>
+      <div class="card plans-card">
+        <span class="stub l" aria-hidden="true"></span><span class="stub r" aria-hidden="true"></span>
+        <div class="chead"><span class="po">Flex Bins plans</span><span class="tag">A Shopify app</span></div>
+        <ul class="plans">
+          <li><h3>Rack</h3><p class="amt">$29<span>/mo</span></p><p>1 location, up to 300 spots, 2 users, 50 photo reads a month</p></li>
+          <li><h3>Area</h3><p class="amt">$79<span>/mo</span></p><p>1 location, up to 2,000 spots, photo grids and pins, 10 users, 300 photo reads a month</p></li>
+          <li><h3>Warehouse</h3><p class="amt">$199<span>/mo</span></p><p>Unlimited locations, spots and users, 1,500 photo reads a month</p></li>
+        </ul>
+        <div class="cfoot"><span><b>14-day free trial</b> · pay yearly, get two months free</span><span>Extra photo reads on monthly plans: 10¢ each</span></div>
       </div>
     </div>
   </section>
