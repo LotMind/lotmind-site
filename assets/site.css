@@ -1,0 +1,303 @@
+/* LotMind site: one shared stylesheet.
+   The page styles below are generated from the approved mockup (one class per mockup style) by the build script;
+   edit the mockup values there, or override them here. */
+body{margin:0;background:#1C1D21}
+:where(a){color:#1FB5B5}
+:where(a):hover{color:#5AD3D3}
+img{max-width:100%}
+[hidden]{display:none !important}
+.dc-branch{display:contents}
+.site-menu{display:contents}
+.menu-toggle{display:none}
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+:focus-visible{outline:2px solid #5AD3D3;outline-offset:2px}
+
+/* ---- Page styles, carried over from the approved mockup ---- */
+.s1{background: #1C1D21; color: #FFFFFF; font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; min-height: 100vh; width: 100%}
+.s2{background: #1C1D21; border-bottom: 1px solid #2E4F8F; font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF; width: 100%}
+.s3{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px}
+.s4{display: inline-flex; align-items: center; gap: 12px; text-decoration: none}
+.s5{display: inline-grid; place-items: center; padding: 6px; border-radius: 50%; background: radial-gradient(circle, rgba(198,245,245,.55) 0%, rgba(31,181,181,.35) 45%, rgba(31,181,181,0) 72%)}
+.s6{width: 46px; height: auto; display: block; filter: drop-shadow(0 0 4px rgba(90,211,211,.9)) drop-shadow(0 0 14px rgba(31,181,181,.7))}
+.s7{font: 600 25px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.02em}
+.s8{color: #FFFFFF}
+.s9{color: #1FB5B5}
+.s10{display: flex; align-items: center; gap: 22px; flex-wrap: wrap}
+.s11{color: #9AA7B8; text-decoration: none; font: 500 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; padding: 14px 4px}
+.s12{display: flex; align-items: center; gap: 10px; flex-wrap: wrap}
+.s13{color: #FFFFFF; text-decoration: none; font: 500 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; padding: 14px 10px}
+.s14{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: transparent; color: #FFFFFF; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 1px solid #2E4F8F; cursor: pointer; min-height: 44px; padding: 0 14px; gap: 8px; font-size: 15px}
+.s15{font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #1FB5B5}
+.s16{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: #1FB5B5; color: #0C1A3E; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 0; cursor: pointer; box-shadow: 0 0 24px -4px rgba(31,181,181,.6); min-height: 44px; font-size: 15px}
+.s17{padding: 56px 0 72px}
+.s18{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: center}
+.s19{flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px}
+.s20{font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #1FB5B5; margin: 0}
+.s21{margin: 0; font: 700 clamp(38px, 5.2vw, 60px)/1.04 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.015em}
+.s22{color: #1FB5B5; text-shadow: 0 0 28px rgba(31,181,181,.45)}
+.s23{font: 400 18px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; margin: 0; max-width: 40em; font-size: 19px}
+.s24{display: flex; gap: 12px; flex-wrap: wrap}
+.s25{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: #1FB5B5; color: #0C1A3E; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 0; cursor: pointer; box-shadow: 0 0 24px -4px rgba(31,181,181,.6)}
+.s26{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: transparent; color: #FFFFFF; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 1px solid #2E4F8F; cursor: pointer}
+.s27{margin: 0; font: 400 13px/1.5 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #9AA7B8}
+.s28{flex: 1 1 520px; min-width: 0}
+.s29{display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid #2E4F8F; box-shadow: 0 24px 60px -24px rgba(31,181,181,.35)}
+.s30{background: #14285A; border-top: 1px solid #2E4F8F; border-bottom: 1px solid #2E4F8F; padding: 26px 0}
+.s31{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; align-items: center; gap: 18px; flex-wrap: wrap}
+.s32{width: 44px; height: auto; filter: drop-shadow(0 0 6px rgba(90,211,211,.9))}
+.s33{margin: 0; flex: 1 1 400px; font: 500 17px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s34{font: 600 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s35{background: #14285A; border-bottom: 1px solid #2E4F8F; padding: 64px 0}
+.s36{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 26px}
+.s37{display: flex; flex-direction: column; gap: 10px}
+.s38{font: 700 clamp(28px, 3.4vw, 40px)/1.12 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; margin: 0; color: #FFFFFF}
+.s39{font: 400 18px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; margin: 0; max-width: 40em; color: #A9B6D3}
+.s40{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px}
+.s41{display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 10px; background: #0C1A3E; border: 1px solid #2E4F8F}
+.s42{font: 600 16px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF}
+.s43{font: 400 14px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s44{padding: 72px 0 0}
+.s45{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 18px}
+.s46{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 28px; display: flex; flex-direction: column; gap: 12px}
+.s47{font: 700 26px/1.15 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s48{font: 400 15.5px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s49{display: flex; gap: 6px; flex-wrap: wrap}
+.s50{display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: rgba(31,181,181,.14); color: #5AD3D3}
+.s51{margin: 0; font: 400 15px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8}
+.s52{padding: 80px 0}
+.s53{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 36px}
+.s54{display: flex; flex-direction: column; gap: 12px}
+.s55{font: 400 18px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; margin: 0; max-width: 40em}
+.s56{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 18px}
+.s57{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 26px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: #FFFFFF}
+.s58{font: 400 15.5px/1.55 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3; flex: 1}
+.s59{list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px}
+.s60{font: 500 13px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #5AD3D3; background: rgba(31,181,181,.12); border-radius: 999px; padding: 7px 10px}
+.s61{font: 600 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #1FB5B5; margin-top: 6px}
+.s62{border: 1px solid #1FB5B5; border-radius: 10px; padding: 18px 22px; background: rgba(31,181,181,.08); display: flex; gap: 14px; align-items: center; flex-wrap: wrap}
+.s63{font: 400 15.5px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s64{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 30px}
+.s65{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 22px}
+.s66{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; gap: 14px}
+.s67{font: 700 22px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s68{list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px}
+.s69{display: flex; gap: 10px; font: 400 15px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s70{color: #1FB5B5; font-weight: 700}
+.s71{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; background: #0C1A3E; padding: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center}
+.s72{flex: 1 1 360px; display: flex; flex-direction: column; gap: 10px}
+.s73{font: 700 24px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s74{flex: 1 1 420px; min-width: 0}
+.s75{background: #0C1A3E; border-top: 1px solid #2E4F8F; border-bottom: 1px solid #2E4F8F; padding: 80px 0}
+.s76{flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 18px}
+.s77{font: 400 18px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; margin: 0; max-width: 40em; font-size: 17px}
+.s78{margin: 0; background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; background: #0C1A3E; overflow: hidden; box-shadow: 0 24px 60px -24px rgba(31,181,181,.35); font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s79{display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #14285A; border-bottom: 1px solid #2E4F8F}
+.s80{width: 22px; height: auto}
+.s81{font: 600 13px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s82{font: 500 10px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .1em; color: #A9B6D3}
+.s83{font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3; margin-left: 8px}
+.s84{margin-left: auto; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #5AD3D3}
+.s85{padding: 18px; display: flex; flex-direction: column; gap: 12px}
+.s86{flex: 3 1 260px; aspect-ratio: 16/10; border-radius: 8px; background: radial-gradient(circle at 40% 45%, #2E4F8F, #14285A 60%, #0A1430); position: relative; display: grid; place-items: center}
+.s87{position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: #D93025; color: #FFFFFF}
+.s88{position: absolute; top: 10px; right: 10px; font: 400 12px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3; color: #FFFFFF}
+.s89{flex: 2 1 180px; display: flex; flex-direction: column; gap: 8px}
+.s90{display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2E4F8F; border-radius: 8px; background: #14285A; flex-direction: column; align-items: stretch; gap: 6px}
+.s91{font: 400 12px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3}
+.s92{font: 600 14px/1.3 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s93{font: 700 18px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #1FB5B5}
+.s94{display: flex; gap: 6px}
+.s95{display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 6px; font: 600 12.5px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; background: #1FB5B5; color: #0C1A3E}
+.s96{display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 6px; font: 600 12.5px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; border: 1px solid #2E4F8F; color: #FFFFFF}
+.s97{margin: 0; font: 400 12.5px/1.4 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s98{color: #5AD3D3}
+.s99{padding: 0 18px 12px; font: 400 11px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #9AA7B8}
+.s100{background: #14285A; border-top: 1px solid #2E4F8F; border-bottom: 1px solid #2E4F8F; padding: 72px 0}
+.s101{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 36px}
+.s102{font: 700 clamp(28px, 3.4vw, 40px)/1.12 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; margin: 0; color: #FFFFFF; font-size: 30px}
+.s103{margin: 0; font: 400 16.5px/1.65 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s104{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 22px; align-items: center; text-align: center}
+.s105{font: 400 18px/1.6 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; margin: 0; max-width: 40em; text-align: center}
+.s106{display: flex; gap: 12px; flex-wrap: wrap; justify-content: center}
+.s107{background: #0C1A3E; border-top: 1px solid #2E4F8F; color: #FFFFFF; font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; width: 100%}
+.s108{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; padding-top: 56px; padding-bottom: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 36px}
+.s109{display: flex; flex-direction: column; gap: 14px}
+.s110{font: 600 24px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s111{margin: 0; color: #9AA7B8; font-size: 15px; line-height: 1.6}
+.s112{margin: 0; color: #9AA7B8; font-size: 14px; line-height: 1.6}
+.s113{font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #1FB5B5; margin: 0; margin-bottom: 6px}
+.s114{color: #9AA7B8; text-decoration: none; font-size: 15px}
+.s115{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; padding-top: 18px; padding-bottom: 28px; border-top: 1px solid #2E4F8F; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap}
+.s116{margin: 0; color: #9AA7B8; font: 400 13px/1.5 'JetBrains Mono', ui-monospace, Menlo, monospace}
+.s117{position: relative; width: 0; height: 0}
+.s118{position: fixed; right: 24px; bottom: 24px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s119{width: min(360px, calc(100vw - 48px)); background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; background: #0C1A3E; box-shadow: 0 24px 60px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(31,181,181,.2); overflow: hidden}
+.s120{display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #2E4F8F; background: #14285A}
+.s121{width: 34px; height: auto; filter: drop-shadow(0 0 6px rgba(90,211,211,.8))}
+.s122{flex: 1}
+.s123{margin: 0; font: 600 15px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s124{margin: 0; font: 400 12px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3}
+.s125{width: 44px; height: 44px; border-radius: 6px; border: 0; background: transparent; color: #FFFFFF; cursor: pointer}
+.s126{padding: 16px; display: flex; flex-direction: column; gap: 12px}
+.s127{margin: 0; background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px 10px 10px 2px; padding: 12px 14px; font-size: 14.5px; line-height: 1.55; max-width: 92%}
+.s128{display: flex; flex-wrap: wrap; gap: 8px}
+.s129{min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid #1FB5B5; background: transparent; color: #1FB5B5; font: 500 14px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer}
+.s130{min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid #1FB5B5; background: transparent; color: #1FB5B5; font: 500 14px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer; display: inline-flex; align-items: center; box-sizing: border-box; text-decoration: none}
+.s131{display: flex; gap: 8px; padding: 12px 16px 16px; border-top: 1px solid #2E4F8F}
+.s132{position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)}
+.s133{flex: 1; min-width: 0; min-height: 44px; padding: 0 12px; border-radius: 6px; border: 1px solid #2E4F8F; background: #1C1D21; color: #FFFFFF; font: 400 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s134{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: #1FB5B5; color: #0C1A3E; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 0; cursor: pointer; box-shadow: 0 0 24px -4px rgba(31,181,181,.6); min-height: 44px; padding: 0 16px; font-size: 15px}
+.s135{display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 20px 0 14px; border-radius: 999px; border: 0; background: #1FB5B5; color: #0C1A3E; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer; box-shadow: 0 0 28px -4px rgba(31,181,181,.7)}
+.s136{padding: 52px 0 64px}
+.s137{flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px}
+.s138{margin: 0; font: 700 clamp(36px, 4.6vw, 54px)/1.05 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.015em}
+.s139{margin: 0; font: 600 22px/1.35 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #1FB5B5}
+.s140{display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 10px; border: 1px solid #1FB5B5; background: rgba(31,181,181,.08)}
+.s141{display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: #1FB5B5; color: #0C1A3E; flex: none}
+.s142{font: 500 15px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s143{display: flex; gap: 8px; flex-wrap: wrap}
+.s144{display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: #14285A; border: 1px solid #2E4F8F; color: #FFFFFF; text-decoration: none; min-height: 32px; padding: 0 12px}
+.s145{display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px}
+.s146{margin: 0; font: 400 13.5px/1.5 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #9AA7B8}
+.s147{flex: 1 1 540px; min-width: 0}
+.s148{padding: 72px 0; background: #0C1A3E; border-top: 1px solid #2E4F8F; border-bottom: 1px solid #2E4F8F}
+.s149{flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px}
+.s150{font: 700 clamp(28px, 3.4vw, 40px)/1.12 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; margin: 0; color: #FFFFFF; font-size: clamp(26px, 3vw, 34px)}
+.s151{display: flex; gap: 10px; font: 400 15.5px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s152{flex: none; margin-top: 3px}
+.s153{padding: 72px 0}
+.s154{margin: 0; font: 400 16.5px/1.65 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8}
+.s155{display: flex; gap: 10px; font: 400 15.5px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8}
+.s156{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 24px}
+.s157{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; background: #14285A; padding: 28px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between}
+.s158{display: flex; flex-direction: column; gap: 6px; flex: 1 1 420px}
+.s159{font: 400 15.5px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s160{font: 700 clamp(28px, 3.4vw, 40px)/1.12 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em; margin: 0; color: #FFFFFF; font-size: 28px; margin-top: 24px}
+.s161{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #FFFFFF}
+.s162{font: 600 20px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s163{font: 400 15px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s164{display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2E4F8F; border-radius: 8px; background: #14285A; flex-direction: column; align-items: stretch; gap: 8px}
+.s165{display: flex; justify-content: space-between; gap: 10px}
+.s166{font: 600 14px/1.2 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s167{margin: 0; font: 500 14px/1.4 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s168{display: flex; gap: 8px; align-items: center; font: 400 12px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3}
+.s169{display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px}
+.s170{display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2E4F8F; border-radius: 8px; background: #14285A; flex-direction: column; align-items: flex-start; gap: 6px}
+.s171{font: 700 20px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s172{display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2E4F8F; border-radius: 8px; background: #14285A; flex-direction: column; align-items: flex-start; gap: 6px; border-color: #1FB5B5}
+.s173{font: 700 20px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #1FB5B5}
+.s174{margin: 0; font: 600 16px/1.3 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s175{display: grid; grid-template-columns: 1.1fr 1.6fr 1fr 1.2fr; gap: 8px; font: 400 12px/1.4 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3}
+.s176{display: grid; grid-template-columns: 1.1fr 1.6fr 1fr 1.2fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid #2E4F8F; align-items: center}
+.s177{font: 500 13px/1.2 'JetBrains Mono', ui-monospace, Menlo, monospace}
+.s178{font: 400 13px/1.3 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s179{font: 500 13px/1 'JetBrains Mono', ui-monospace, Menlo, monospace}
+.s180{font: 500 13px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #1FB5B5}
+.s181{display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #2E4F8F; border-radius: 8px; background: #14285A}
+.s182{font: 500 13.5px/1.4 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s183{padding: 52px 0 36px}
+.s184{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 16px}
+.s185{margin: 0; font: 700 clamp(34px, 4.4vw, 52px)/1.06 'Poppins', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -0.01em}
+.s186{display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: #14285A; border: 1px solid #2E4F8F; color: #FFFFFF; text-decoration: none; min-height: 36px; padding: 0 14px}
+.s187{padding: 44px 0; border-top: 1px solid #2E4F8F}
+.s188{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 20px}
+.s189{display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap}
+.s190{display: flex; flex-direction: column; gap: 8px}
+.s191{display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 12px}
+.s192{font: 600 16px/1.25 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF}
+.s193{padding: 56px 0 72px; border-top: 1px solid #2E4F8F}
+.s194{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center}
+.s195{padding: 52px 0 24px}
+.s196{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center}
+.s197{display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid #2E4F8F; margin-top: 10px}
+.s198{min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: #1FB5B5; color: #0C1A3E; font: 600 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer}
+.s199{min-height: 44px; padding: 0 20px; border-radius: 999px; border: 0; background: transparent; color: #FFFFFF; font: 600 15px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; cursor: pointer}
+.s200{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; padding-bottom: 64px}
+.s201{display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px}
+.s202{margin: 0; font: 400 15px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8; text-align: center}
+.s203{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px}
+.s204{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; gap: 14px}
+.s205{display: flex; justify-content: space-between; align-items: center; gap: 8px}
+.s206{margin: 0; font: 600 22px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s207{list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; flex: 1}
+.s208{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: transparent; color: #FFFFFF; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 1px solid #2E4F8F; cursor: pointer; box-sizing: border-box}
+.s209{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; gap: 14px; border: 2px solid #1FB5B5; box-shadow: 0 0 40px -12px rgba(31,181,181,.6)}
+.s210{display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font: 500 11px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; background: #1FB5B5; color: #0C1A3E}
+.s211{display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 6px; background: #1FB5B5; color: #0C1A3E; font: 600 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; text-decoration: none; border: 0; cursor: pointer; box-shadow: 0 0 24px -4px rgba(31,181,181,.6); box-sizing: border-box}
+.s212{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center}
+.s213{background: #0C1A3E; border-top: 1px solid #2E4F8F; border-bottom: 1px solid #2E4F8F; padding: 56px 0}
+.s214{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 32px}
+.s215{margin: 0; font: 600 19px/1.3 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s216{margin: 0; color: #A9B6D3; font-size: 15.5px; line-height: 1.6}
+.s217{padding: 72px 0 24px}
+.s218{display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px}
+.s219{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; padding: 22px; display: flex; flex-direction: column; gap: 8px}
+.s220{font: 400 14.5px/1.5 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s221{background: #14285A; border: 1px solid #2E4F8F; border-radius: 10px; box-sizing: border-box; background: #0C1A3E; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; box-shadow: 0 0 0 1px rgba(31,181,181,.25)}
+.s222{flex: 1 1 260px; display: flex; flex-direction: column; gap: 6px}
+.s223{font: 700 34px/1.1 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s224{font: 400 16px/1 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #9AA7B8}
+.s225{flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start}
+.s226{font: 600 18px/1.4 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s227{margin: 0; font: 400 12.5px/1.5 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #9AA7B8}
+.s228{max-width: 1180px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; width: 100%; display: flex; flex-direction: column; gap: 28px}
+.s229{display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center}
+.s230{display: flex; flex-wrap: wrap; gap: 36px; align-items: center}
+.s231{flex: 3 1 520px; min-width: 0}
+.s232{display: block; max-width: 760px; margin: 0 auto}
+.s233{font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s234{font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif}
+.s235{font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .1em}
+.s236{flex: 2 1 380px; min-width: 0; padding: 20px; border-radius: 16px; background: rgba(20,40,90,.32)}
+.s237{margin: 0 0 6px; font: 700 19px/1.2 'Poppins', 'Helvetica Neue', Arial, sans-serif}
+.s238{margin: 0 0 8px; font: 400 13px/1.4 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #A9B6D3}
+.s239{overflow-x: auto}
+.s240{width: 100%; border-collapse: collapse; min-width: 520px}
+.s241{padding: 12px 10px; text-align: left; font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #9AA7B8; letter-spacing: .1em; text-transform: uppercase}
+.s242{padding: 12px 10px; font: 600 14px/1 'Poppins', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF; text-align: center}
+.s243{border-top: 1px solid rgba(46,79,143,.5)}
+.s244{padding: 12px 10px; text-align: left; font: 600 15px/1.2 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #FFFFFF}
+.s245{padding: 12px 10px; text-align: center}
+.s246{font: 500 12px/1 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #A9B6D3}
+.s247{color: #2E4F8F}
+.s248{display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #1FB5B5; box-shadow: 0 0 10px rgba(31,181,181,.6)}
+
+/* ---- Phones and small tablets ---- */
+html,body{overflow-x:hidden}
+@media (max-width: 960px){
+  .site-header > div{flex-wrap:nowrap !important}
+  .menu-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:6px;border:1px solid #2E4F8F;background:transparent;color:#FFFFFF;font:600 15px/1 'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;cursor:pointer;margin-left:auto}
+  .site-menu{display:none;position:absolute;left:0;right:0;top:100%;z-index:40;background:#1C1D21;border-bottom:1px solid #2E4F8F;padding:8px 16px 20px;box-sizing:border-box;flex-direction:column;gap:12px;box-shadow:0 24px 40px -20px rgba(0,0,0,.6)}
+  .site-header{position:relative}
+  .site-header.menu-open .site-menu{display:flex}
+  .site-menu .site-nav{flex-direction:column;align-items:stretch !important;gap:0 !important}
+  .site-menu .site-nav a{padding:14px 4px !important;border-bottom:1px solid #2E4F8F}
+  .site-menu > div{justify-content:flex-start}
+}
+@media (max-width: 720px){
+  .chat-root.chat-start-open [data-chat-panel]{display:none !important}
+  .chat-root.chat-start-open.chat-opened [data-chat-panel]{display:contents !important}
+}
+@media (max-width: 720px){
+.s3{padding-left:16px;padding-right:16px}
+.s18{padding-left:16px;padding-right:16px}
+.s31{padding-left:16px;padding-right:16px}
+.s36{padding-left:16px;padding-right:16px}
+.s53{padding-left:16px;padding-right:16px}
+.s64{padding-left:16px;padding-right:16px}
+.s101{padding-left:16px;padding-right:16px}
+.s104{padding-left:16px;padding-right:16px}
+.s108{padding-left:16px;padding-right:16px}
+.s115{padding-left:16px;padding-right:16px}
+.s156{padding-left:16px;padding-right:16px}
+.s169{grid-template-columns:1fr}
+.s175{grid-template-columns:1fr}
+.s176{grid-template-columns:1fr}
+.s184{padding-left:16px;padding-right:16px}
+.s188{padding-left:16px;padding-right:16px}
+.s194{padding-left:16px;padding-right:16px}
+.s196{padding-left:16px;padding-right:16px}
+.s200{padding-left:16px;padding-right:16px}
+.s214{padding-left:16px;padding-right:16px}
+.s228{padding-left:16px;padding-right:16px}
+}
