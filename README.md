@@ -1,3 +1,22 @@
 # lotmind.ai
 
-The LotMind website. One page: `index.html`. Pushing to `main` publishes it through GitHub Pages.
+The LotMind website, plain static HTML served by GitHub Pages. Pushing to `main` publishes it.
+
+| Page | File |
+|---|---|
+| Home | `index.html` |
+| LotMind Ops | `ops/index.html` |
+| LotMind Vendor | `vendor/index.html` |
+| LotMind Sales | `sales/index.html` |
+| LotMind Marketing | `marketing/index.html` |
+| Every feature | `features/index.html` |
+| Plans | `plans/index.html` |
+| Previous one-page site (kept until it can go, not indexed) | `old/index.html` |
+
+The header, footer and chat bubble are repeated in every page. All styles are in `assets/site.css`
+(the numbered classes carry the approved mockup's values; the phone rules are at the end), and the menu,
+chat bubble and Plans switch are in `assets/site.js`. Images are in `assets/`.
+
+Every "Book a call" link uses one booking link; search for `Book%20a%20LotMind%20call` to change it.
+
+Don't delete `CNAME`: it keeps lotmind.ai pointed here.
