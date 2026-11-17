@@ -1,6 +1,6 @@
 # lotmind.ai
 
-The LotMind website, plain static HTML served by GitHub Pages. Pushing to `main` publishes it.
+The LotMind website, plain static HTML. lotmind.ai is served by Cloud Run (`lotmind-site` in lotmind-prod): every merge to `main` builds `Dockerfile` (nginx with these files) and deploys it, through `cloudbuild.yaml` and the trigger `lotmind-site-main`.
 
 | Page | File |
 |---|---|
