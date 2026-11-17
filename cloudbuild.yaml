@@ -1,0 +1,19 @@
+# Publishes lotmind.ai on every merge to main (Nov 16, Jeff: "when we make changes they get updated automatically").
+# Run by the Cloud Build trigger lotmind-site-main in lotmind-prod. Builds the nginx image with the site's files and
+# deploys Cloud Run lotmind-site, which lotmind.ai points to. The service keeps its own settings.
+steps:
+- id: build
+  name: gcr.io/cloud-builders/docker
+  args: ['build', '-t', '${_IMAGE}:${COMMIT_SHA}', '.']
+- id: push
+  name: gcr.io/cloud-builders/docker
+  args: ['push', '${_IMAGE}:${COMMIT_SHA}']
+- id: deploy
+  name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'lotmind-site', '--image', '${_IMAGE}:${COMMIT_SHA}', '--region', 'us-west1', '--quiet']
+substitutions:
+  _IMAGE: us-west1-docker.pkg.dev/lotmind-prod/cloud-run-source-deploy/lotmind-site
+images: ['${_IMAGE}:${COMMIT_SHA}']
+options:
+  logging: CLOUD_LOGGING_ONLY
